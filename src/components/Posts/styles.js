@@ -25,6 +25,10 @@ export const PostContainer = styled.article`
       color: var(--green-300);
     }
   }
+
+  .commentsList{
+    margin-top: 2rem;
+  }
 `
 
 export const Header = styled.header`
@@ -61,7 +65,7 @@ export const Header = styled.header`
     img {
       width: calc(3rem + 12px);
       height: calc(3rem + 12px);
-      border: 8px;
+      border-radius: 8px;
       border: 4px solid var(--gray-800);
       outline: 2px solid var(--green-500);
     }

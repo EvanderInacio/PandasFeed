@@ -1,3 +1,4 @@
+import { Comment } from '../Comment'
 import {Form, Header, PostContainer} from './styles'
 
 export function Posts() {
@@ -42,6 +43,13 @@ export function Posts() {
             <button type='submit'>Publicar</button>
           </footer>
         </Form>
+
+        <div className='commentsList'>
+          <Comment />
+          <Comment />
+          <Comment />
+
+        </div>
       </PostContainer>
     </>
   )
