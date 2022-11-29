@@ -57,6 +57,16 @@ const GlobalStyle = createGlobalStyle`
     align-items: flex-start;
   }
 
+  @media(max-width: 768px) {
+    html {
+      font-size: 87.5%;
+    }
+    
+    .wrapper{
+      grid-template-columns: 1fr;
+    }
+  }
+
 `
 
 export default GlobalStyle

@@ -1,3 +1,4 @@
+import { Avatar } from '../Avatar'
 import { Comment } from '../Comment'
 import {Form, Header, PostContainer} from './styles'
 
@@ -7,7 +8,7 @@ export function Posts() {
       <PostContainer>
         <Header>
           <div className='autor'>
-            <img src="https://github.com/evanderInacio.png" />
+            <Avatar src="https://github.com/evanderInacio.png" />
             <div className='info'>
               <strong>Evander Inacio</strong>
               <span>Web Developer</span>
