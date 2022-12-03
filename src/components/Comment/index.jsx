@@ -21,7 +21,7 @@ export function Comment({content}) {
               </time>
             </div>
 
-            <button title="Deletar comentário"><Trash size={24}/></button>
+            <button onClick={handle} title="Deletar comentário"><Trash size={24}/></button>
           </header>
 
           <p>{content}</p>
