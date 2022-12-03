@@ -52,9 +52,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: 256px 1fr;
+    grid-template-columns: 256px 1fr ;
     gap: 2rem;
-    align-items: flex-start;
+    align-items: flex-start;    
   }
 
   @media(max-width: 768px) {
