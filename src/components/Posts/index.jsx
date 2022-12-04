@@ -5,20 +5,22 @@ import { Avatar } from '../Avatar'
 import { Comment } from '../Comment'
 import { Form, Header, PostContainer } from './styles'
 
-export function Posts({author, publishedAt, content}) {
-  const [comments, setComments] = useState([
-    'Muito bom Dev, parabéns!! 👏👏'
-  ])
+export function Posts({ author, publishedAt, content }) {
+  const [comments, setComments] = useState(['Muito bom Dev, parabéns!! 👏👏'])
 
   const [newCommentText, setNewCommentText] = useState('')
 
-  const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
-    locale: ptBR
-  })
+  const publishedDateFormatted = format(
+    publishedAt,
+    "d 'de' LLLL 'às' HH:mm'h'",
+    {
+      locale: ptBR
+    }
+  )
 
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
     locale: ptBR,
-    addSuffix: true,
+    addSuffix: true
   })
 
   function handleCreateNewComment() {
@@ -30,6 +32,14 @@ export function Posts({author, publishedAt, content}) {
 
   function handleNewCommentChange() {
     setNewCommentText(event.target.value)
+  }
+
+  function deleteComment(commentToDelete) {
+    const commentsWithoutDeleteOne = comments.filter(comment => {
+      return comment !== commentToDelete
+    })
+    
+    setComments(commentsWithoutDeleteOne)
   }
 
   return (
@@ -44,28 +54,35 @@ export function Posts({author, publishedAt, content}) {
             </div>
           </div>
 
-          <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+          <time
+            title={publishedDateFormatted}
+            dateTime={publishedAt.toISOString()}
+          >
             {publishedDateRelativeToNow}
           </time>
-        </Header> 
+        </Header>
 
         <div className="content">
           {content.map(line => {
-            if(line.type === 'paragraph') {
+            if (line.type === 'paragraph') {
               return <p key={line.content}>{line.content}</p>
             } else if (line.type === 'link') {
-              return <p key={line.content}><a href="#">{line.content}</a></p>
+              return (
+                <p key={line.content}>
+                  <a href="#">{line.content}</a>
+                </p>
+              )
             }
           })}
         </div>
 
         <Form onSubmit={handleCreateNewComment}>
           <strong>Deixe seu feedback</strong>
-          <textarea 
-            name='comment' 
+          <textarea
+            name="comment"
             placeholder="Deixe um comentário"
             value={newCommentText}
-            onChange={handleNewCommentChange} 
+            onChange={handleNewCommentChange}
           />
 
           <footer>
@@ -75,7 +92,13 @@ export function Posts({author, publishedAt, content}) {
 
         <div className="commentsList">
           {comments.map(comment => {
-            return <Comment key={comment} content={comment}/>
+            return (
+              <Comment
+                key={comment}
+                content={comment}
+                onDeleteComment={deleteComment}
+              />
+            )
           })}
         </div>
       </PostContainer>
