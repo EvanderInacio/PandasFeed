@@ -1,5 +1,5 @@
 <h1 align="center">
-  Pandas Feed <img width="25px" src="#"/>
+  Pandas Feed <img width="30px" src="https://raw.githubusercontent.com/EvanderInacio/PandasFeed/df29a54dc0ca9db618dd2ab12da6fc1359521333/src/assets/logo.svg"/>
 </h1>
 
  <p align="center">
@@ -10,7 +10,7 @@
 
 <br>
 
-![Resultado final do projeto]()
+![Resultado final do projeto](https://raw.githubusercontent.com/EvanderInacio/PandasFeed/master/public/preview.png)
 
 <br>
 
